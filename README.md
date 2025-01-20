@@ -9,7 +9,7 @@
 ## Task Breakdown
 
 ### 1. Map Parsing Module
-- [ ] Basic file reading and validation
+- [x ] Basic file reading and validation
   - [ ] Check file extension (.cub)
   - [ ] Handle file opening errors
 - [ ] Parse map elements
