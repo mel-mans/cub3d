@@ -9,8 +9,7 @@
 ## Task Breakdown
 
 ### 1. Map Parsing Module
-- [x] Check file extension (.cub)
-  - [ ] Check file extension (.cub)
+  - [x] Check file extension (.cub)
   - [ ] Handle file opening errors
 - [ ] Parse map elements
   - [ ] Read and validate textures (NO, SO, WE, EA)
