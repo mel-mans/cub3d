@@ -1,3 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/23 23:04:01 by acharik           #+#    #+#             */
+/*   Updated: 2025/04/23 23:04:02 by acharik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+
+
 #include "../includ/map_parsing.h"
 #include<stdio.h>
 /* change one thing in this function the position of indext to start  */
