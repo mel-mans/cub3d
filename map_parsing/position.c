@@ -10,21 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
 #include "./includ/map_parsing.h"
 
 int	around_zero(t_data_par *parsing, int index, char *line, int i)
 {
-	if (i >= (int)(ft_strlen(parsing->maze[index + 1])) ||
-			(parsing->maze[index + 1] == 0 ||
-			index - 1 < 0 || line[i - 1] == ' ' ||
-			line[i + 1] == ' ' || line[i + 1] == '\0'
-			|| parsing->maze[index - 1][i] == ' ' ||
-			parsing->maze[index + 1][i] == '\0' ||
-			parsing->maze[index + 1][i] == ' '))
+	if (i >= (int)(ft_strlen(parsing->maze[index + 1])) || (parsing->maze[index
+			+ 1] == 0 || index - 1 < 0 || line[i - 1] == ' ' || line[i
+			+ 1] == ' ' || line[i + 1] == '\0' || parsing->maze[index
+			- 1][i] == ' ' || parsing->maze[index + 1][i] == '\0'
+			|| parsing->maze[index + 1][i] == ' '))
 	{
 		return (1);
 	}
@@ -33,14 +27,11 @@ int	around_zero(t_data_par *parsing, int index, char *line, int i)
 
 void	around_ps(t_data_par *parsing, int i, int index)
 {
-	if (parsing->maze[index + 1] == 0
-		|| index - 1 < 0
-		|| parsing->maze[index][i - 1] == ' ' ||
-		parsing->maze[index][i + 1] == ' ' ||
-		parsing->maze[index][i + 1] == '\0' ||
-		parsing->maze[index - 1][i] == ' '
-		|| parsing->maze[index + 1][i] == '\0' ||
-		parsing->maze[index + 1][i] == ' ')
+	if (parsing->maze[index + 1] == 0 || index - 1 < 0 || parsing->maze[index][i
+		- 1] == ' ' || parsing->maze[index][i + 1] == ' '
+		|| parsing->maze[index][i + 1] == '\0' || parsing->maze[index
+		- 1][i] == ' ' || parsing->maze[index + 1][i] == '\0'
+		|| parsing->maze[index + 1][i] == ' ')
 	{
 		error_line(parsing);
 	}

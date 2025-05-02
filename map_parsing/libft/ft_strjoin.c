@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
 #include "../includ/map_parsing.h"
-#include<stdio.h>
+#include <stdio.h>
+
 /* change one thing in this function the position of indext to start  */
 
 static char	*ft_strcat_p(char *dest, const char *src, int position)
@@ -55,7 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 /*
-int main()
+int	main(void)
 {
   printf("%s",ft_strjoin("","alami"));
 }

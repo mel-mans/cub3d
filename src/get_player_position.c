@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
 #include "../cub3d.h"
 
 void	set_field_of_view(t_mlx *wind, char in_map)
@@ -39,7 +35,8 @@ void	get_player_position(t_mlx *wind)
 		j = 0;
 		while (wind->map[i][j])
 		{
-			if (wind->map[i][j] == 'N' || wind->map[i][j] == 'S' || wind->map[i][j] == 'W' || wind->map[i][j] == 'E')
+			if (wind->map[i][j] == 'N' || wind->map[i][j] == 'S'
+				|| wind->map[i][j] == 'W' || wind->map[i][j] == 'E')
 			{
 				set_field_of_view(wind, wind->map[i][j]);
 				wind->map[i][j] = '0';

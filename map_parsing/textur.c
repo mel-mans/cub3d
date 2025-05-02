@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "./includ/map_parsing.h"
 
 char	*get_path_check(char *line, char *ser)
@@ -35,7 +33,7 @@ char	*get_path_check(char *line, char *ser)
 	return (line);
 }
 
-void	texture_value(t_data_par *parsing, char *line, int *nbr )
+void	texture_value(t_data_par *parsing, char *line, int *nbr)
 {
 	if (*nbr > 3)
 	{

@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
-#include<stdio.h>
-#include <string.h>
 #include "../includ/map_parsing.h"
+#include <stdio.h>
+#include <string.h>
 
 static int	chec_here(char *arr, char *find, size_t n)
 {
@@ -56,18 +52,18 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
- // printf(" %s  %s",ft_strnstr ("abcdecdef","a",1),strnstr("abcdecdef","a",1)); 
+ // printf(" %s  %s",ft_strnstr ("abcdecdef","a",1),strnstr("abcdecdef","a",1));
    const char *s1 = "aaabcabcd";
 	const char *s2 = "aabc";
 	size_t max = strlen(s2);
-    const char *i1;
-    i1 = strnstr("abcdefhg", "", -1);
-    const char *i2;
-    i2 = ft_strnstr("abcdehg", "", -1);
+	const char *i1;
+	i1 = strnstr("abcdefhg", "", -1);
+	const char *i2;
+	i2 = ft_strnstr("abcdehg", "", -1);
   //
-    printf("strn %s ft_str i2 %s %d", i1,i2,ft_strlen(""));
-  return 0;
+	printf("strn %s ft_str i2 %s %d", i1,i2,ft_strlen(""));
+  return (0);
  }
 */

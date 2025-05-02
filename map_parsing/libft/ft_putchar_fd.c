@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "../includ/map_parsing.h"
-#include<unistd.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

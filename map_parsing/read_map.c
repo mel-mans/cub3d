@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "./includ/map_parsing.h"
 
 void	aff_line(t_data_par *parsing, t_index *index, char *line)
@@ -22,17 +20,17 @@ void	aff_line(t_data_par *parsing, t_index *index, char *line)
 		printf(" error texture  %d \n", index->n_derc);
 		exit(0);
 	}
-	if (parsing->ceiling_color == -1
-		|| parsing->floor_color == -1 || index->n_color != 2)
+	if (parsing->ceiling_color == -1 || parsing->floor_color == -1
+		|| index->n_color != 2)
 		error_color(parsing);
-	parsing -> maze[index->maze_index] = ft_strdup(line);
-	index -> maze_index++;
+	parsing->maze[index->maze_index] = ft_strdup(line);
+	index->maze_index++;
 }
 
-void	get_info_map(t_data_par *parsing,
-		char *line, t_index *index, int *n_tex)
+void	get_info_map(t_data_par *parsing, char *line, t_index *index,
+		int *n_tex)
 {
-	char		*ptr;
+	char	*ptr;
 
 	ptr = ft_strtrim(line, " ");
 	if (check_possiblty_tex(ptr))
@@ -41,7 +39,7 @@ void	get_info_map(t_data_par *parsing,
 		get_color_values(parsing, ptr, index);
 	else if ((ptr[0] == '1' || ptr[0] == '0' || index->maze_index != 0))
 	{
-		if (ptr[0] == '1' || ptr[0] == '0' )
+		if (ptr[0] == '1' || ptr[0] == '0')
 			aff_line(parsing, index, line);
 		free(ptr);
 		ptr = 0;

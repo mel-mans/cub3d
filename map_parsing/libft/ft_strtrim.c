@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "../includ/map_parsing.h"
 
 static int	chec_in_set(char *ptr, char c)
@@ -37,7 +34,7 @@ static char	*ft_strdup_n(char *src, int n)
 	i = 0;
 	if (n < 0)
 		n = 0;
-	ptr = malloc((n + 1) * sizeof (char));
+	ptr = malloc((n + 1) * sizeof(char));
 	if (ptr == 0)
 		return (0);
 	while (i < n)
@@ -72,7 +69,7 @@ static char	*remove_from_beg_end(char *s1, char *set, char *ptr, int s_length)
 			stop1 = 0;
 		index++;
 	}
-	ptr = ft_strdup_n(ptr, ft_strlen(ptr)-l);
+	ptr = ft_strdup_n(ptr, ft_strlen(ptr) - l);
 	return (ptr);
 }
 

@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
 #include "./includ/map_parsing.h"
 
 void	error_line(t_data_par *parsing)

@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
-
-#include <stdlib.h>
-#include <stdio.h>
 #include "../includ/map_parsing.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void	*ft_calloc(size_t len, size_t size)
 {
@@ -39,10 +34,11 @@ void	*ft_calloc(size_t len, size_t size)
 	return (ptr);
 }
 /*
-int main()
+int	main(void)
 {
-	int *ptr = ft_calloc(5,4);
-    printf(" %d ",ptr[5]);
+	int	*ptr;
 
+	ptr = ft_calloc(5,4);
+	printf(" %d ",ptr[5]);
 }
 */

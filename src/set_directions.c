@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "../cub3d.h"
 
 char	check_north_west(double w_y, double w_x, t_mlx *wind)
 {
-	if ((int)(w_y + 1) % 64 == 0 && wind->map[(int)(w_y / 64.0) + 1][(int)(w_x / 64.0)] == '0')
+	if ((int)(w_y + 1) % 64 == 0 && wind->map[(int)(w_y / 64.0) + 1][(int)(w_x
+			/ 64.0)] == '0')
 	{
 		wind->where = w_x;
 		return ('N');
@@ -31,7 +29,8 @@ char	check_north_west(double w_y, double w_x, t_mlx *wind)
 
 char	check_north_east(double w_y, double w_x, t_mlx *wind)
 {
-	if ((int)(w_y + 1) % 64 == 0 && wind->map[(int)((w_y / 64.0) + 1)][(int)(w_x / 64.0)] == '0')
+	if ((int)(w_y + 1) % 64 == 0 && wind->map[(int)((w_y / 64.0) + 1)][(int)(w_x
+			/ 64.0)] == '0')
 	{
 		wind->where = w_x;
 		return ('N');
@@ -45,7 +44,8 @@ char	check_north_east(double w_y, double w_x, t_mlx *wind)
 
 char	check_south_east(double w_y, double w_x, t_mlx *wind)
 {
-	if ((int)(w_y) % 64 == 0 && wind->map[(int)((w_y / 64.0) - 1)][(int)(w_x / 64.0)] == '0')
+	if ((int)(w_y) % 64 == 0 && wind->map[(int)((w_y / 64.0) - 1)][(int)(w_x
+			/ 64.0)] == '0')
 	{
 		wind->where = w_x;
 		return ('S');
@@ -59,7 +59,8 @@ char	check_south_east(double w_y, double w_x, t_mlx *wind)
 
 char	check_south_west(double w_y, double w_x, t_mlx *wind)
 {
-	if ((int)(w_y) % 64 == 0 && wind->map[(int)((w_y / 64.0) - 1)][(int)(w_x / 64.0)] == '0')
+	if ((int)(w_y) % 64 == 0 && wind->map[(int)((w_y / 64.0) - 1)][(int)(w_x
+			/ 64.0)] == '0')
 	{
 		wind->where = w_x;
 		return ('S');

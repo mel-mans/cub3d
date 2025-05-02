@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "../cub3d.h"
 
 char	*north_texture(t_mlx *mlx, int i)
@@ -22,7 +19,8 @@ char	*north_texture(t_mlx *mlx, int i)
 
 	x = (int)round(mlx->where);
 	if (mlx->projection_3d > WIN_H)
-		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0 / mlx->projection_3d))) % 1000);
+		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0
+							/ mlx->projection_3d))) % 1000);
 	else
 		y = (int)round(i * (1000.0 / mlx->projection_3d)) % 1000;
 	mlx->color = mlx->my_mlx.addr_n + (y * mlx->my_mlx.l_len_n + (x * 4));
@@ -36,7 +34,8 @@ char	*south_texture(t_mlx *mlx, int i)
 
 	x = (int)round(mlx->where);
 	if (mlx->projection_3d > WIN_H)
-		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0 / mlx->projection_3d))) % 1000);
+		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0
+							/ mlx->projection_3d))) % 1000);
 	else
 		y = (int)round(i * (1000.0 / mlx->projection_3d)) % 1000;
 	mlx->color = mlx->my_mlx.addr_s + (y * mlx->my_mlx.l_len_s + (x * 4));
@@ -50,7 +49,8 @@ char	*east_texture(t_mlx *mlx, int i)
 
 	x = (int)round(mlx->where);
 	if (mlx->projection_3d > WIN_H)
-		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0 / mlx->projection_3d))) % 1000);
+		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0
+							/ mlx->projection_3d))) % 1000);
 	else
 		y = (int)round(i * (1000.0 / mlx->projection_3d)) % 1000;
 	mlx->color = mlx->my_mlx.addr_e + (y * mlx->my_mlx.l_len_e + (x * 4));
@@ -64,7 +64,8 @@ char	*west_texture(t_mlx *mlx, int i)
 
 	x = (int)round(mlx->where);
 	if (mlx->projection_3d > WIN_H)
-		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0 / mlx->projection_3d))) % 1000);
+		y = ((int)(round((i + (mlx->projection_3d - WIN_H) / 2.0) * (1000.0
+							/ mlx->projection_3d))) % 1000);
 	else
 		y = (int)round(i * (1000.0 / mlx->projection_3d)) % 1000;
 	mlx->color = mlx->my_mlx.addr_w + (y * mlx->my_mlx.l_len_w + (x * 4));

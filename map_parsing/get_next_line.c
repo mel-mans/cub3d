@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "./includ/map_parsing.h"
 
 char	*ft_strdup(char *src)
@@ -22,7 +20,7 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 	len = ft_strlen(src);
-	ptr = malloc((len + 1) * sizeof (char));
+	ptr = malloc((len + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (0);
 	while (src[i] != '\0')

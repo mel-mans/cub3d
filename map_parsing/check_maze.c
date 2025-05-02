@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "./includ/map_parsing.h"
 
 void	check_line(t_data_par *parsing, int index, int *player_index)
@@ -23,8 +21,8 @@ void	check_line(t_data_par *parsing, int index, int *player_index)
 	line = parsing->maze[index];
 	while (i < (int)ft_strlen(line))
 	{
-		if (line[i] == 'S' || line [i] == 'N'
-			|| line [i] == 'E' || line [i] == 'W')
+		if (line[i] == 'S' || line[i] == 'N' || line[i] == 'E'
+			|| line[i] == 'W')
 		{
 			around_ps(parsing, i, index);
 			(*player_index)++;

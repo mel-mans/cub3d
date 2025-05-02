@@ -12,7 +12,7 @@
 
 #include "./includ/map_parsing.h"
 
-int	true_line(char	*str)
+int	true_line(char *str)
 {
 	int	i;
 
@@ -28,13 +28,13 @@ int	true_line(char	*str)
 
 int	check_possiblty(char c)
 {
-	if (c != ' ' && c != '1' && c != '0' && c != 'S'
-		&& c != 'N' && c != 'E' && c != 'W')
+	if (c != ' ' && c != '1' && c != '0' && c != 'S' && c != 'N' && c != 'E'
+		&& c != 'W')
 		return (1);
 	return (0);
 }
 
-int	check_possiblty_tex(char *line )
+int	check_possiblty_tex(char *line)
 {
 	if (!ft_strncmp(line, "SO ", 3) || !ft_strncmp(line, "NO ", 3)
 		|| !ft_strncmp(line, "WE ", 3) || !ft_strncmp(line, "EA ", 3))

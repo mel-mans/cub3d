@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "./includ/map_parsing.h"
 
 int	stat_color(char s, int *vergul, int *nbr, int *rgb)

@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "./includ/map_parsing.h"
 
 void	erros_functions(char **argv)
