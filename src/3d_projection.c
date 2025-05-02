@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:55:25 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/24 05:55:26 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:13:46 by acharik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,19 @@ void	draw(t_mlx *mlx, int i, char dir)
 			*(unsigned int *)east_texture(mlx, i));
 }
 
+static	void	define_px_py(double *px, double *py, t_mlx *wind)
+{
+	*px = wind->x_player;
+	*py = wind->y_player;
+}
+
 void	cast_rays(t_mlx *wind, double angle, int x)
 {
 	double	px;
 	double	py;
 
 	wind->dir = '\0';
-	px = wind->x_player;
-	py = wind->y_player;
+	define_px_py(&px, &py, wind);
 	wind->x_step = cos((angle) * (M_PI / 180));
 	wind->y_step = sin((angle) * (M_PI / 180));
 	while (TRUE)
