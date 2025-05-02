@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:04:15 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:04:18 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:05:56 by acharik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)

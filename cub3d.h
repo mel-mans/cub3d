@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:10:48 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:10:51 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:05:21 by acharik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,8 @@ void			cast_rays(t_mlx *wind, double angle, int i);
 double			calculate_distance(double y_player, double x_player,
 					double y_wall, double x_wall);
 /*
-	Whenever a ray hits the wall set which interface he see's based on his position [y,x] and the wall intersection[y,x]
+	Whenever a ray hits the wall set which interface he 
+	see's based on his position [y,x] and the wall intersection[y,x]
 */
 char			set_directions(double w_y, double w_x, t_mlx *wind);
 /*

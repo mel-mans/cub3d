@@ -6,12 +6,13 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:54:52 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/24 05:54:53 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:08:21 by acharik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
+// printf("Vitess -> %f\n", PX_MOVE + i);
 void	move_forward(t_mlx *wind)
 {
 	double	y_step;
@@ -19,7 +20,6 @@ void	move_forward(t_mlx *wind)
 	int		y_map;
 	int		x_map;
 
-	// printf("Vitess -> %f\n", PX_MOVE + i);
 	y_step = sin(wind->field_of_view * M_PI / 180) * (PX_MOVE);
 	x_step = cos(wind->field_of_view * M_PI / 180) * (PX_MOVE);
 	y_map = (int)(wind->y_player + y_step) / WALL_DIM;

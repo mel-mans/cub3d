@@ -6,16 +6,13 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:04:40 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:04:41 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:08:47 by acharik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #ifndef LIBFT_H
 # define LIBFT_H
-# include<stdlib.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
