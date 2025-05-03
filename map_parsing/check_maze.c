@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:04:48 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:04:49 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/03 17:57:39 by mel-mans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,10 @@ void	check_line(t_data_par *parsing, int index, int *player_index)
 
 void	check_maze_player(t_data_par *parsing)
 {
-	int	j;
 	int	i;
 	int	player_index;
 
 	i = 0;
-	j = 0;
 	player_index = 0;
 	while (parsing->maze[i])
 	{

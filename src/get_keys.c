@@ -32,6 +32,8 @@ void	rotate_right(t_mlx *wind)
 
 int	get_keys(int press, t_mlx *wind)
 {
+	if (wind->my_mlx.img)
+		mlx_destroy_image(wind->mlx, wind->my_mlx.img);
 	if (press == 65363)
 		rotate_right(wind);
 	if (press == 65361)

@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:04:01 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:04:02 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/03 17:56:22 by mel-mans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ static char	*ft_strcat_p(char *dest, const char *src, int position)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int		index;
 	int		length;
 	char	*ptr;
 
-	index = 0;
 	if (!s1 || !s2)
 		return (0);
 	length = ft_strlen(s1) + ft_strlen(s2);

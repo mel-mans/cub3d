@@ -6,84 +6,99 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:05:53 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:05:54 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/03 21:46:22 by mel-mans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includ/map_parsing.h"
 
-static int	min_mal(int a, int b)
+int	check_line2(char *str)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (-1);
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (-1);
+}
+
+char	*ft_strjoin2(char *strr, char *buff)
+{
+	size_t	i;
+	size_t	j;
+	char	*str;
+
+	if (!strr && !buff)
+		return (NULL);
+	if (!strr)
+		strr = ft_strdup("");
+	str = malloc(sizeof(char) * ((ft_strlen(strr) + ft_strlen(buff)) + 1));
+	if (str == NULL)
+		return (NULL);
+	i = -1;
+	j = 0;
+	if (strr)
+		while (strr[++i] != '\0')
+			str[i] = strr[i];
+	while (buff[j] != '\0')
+		str[i++] = buff[j++];
+	str[ft_strlen(strr) + ft_strlen(buff)] = '\0';
+	if (strr)
+		free(strr);
+	return (str);
+}
+
+char	*ft_strdup(const char *string)
+{
+	size_t		i;
+	char		*ptr;
+	int			n;
+
+	n = 0;
+	i = ft_strlen(string);
+	ptr = (char *)malloc(1 + i * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	while (string[n])
+	{
+		ptr[n] = string[n];
+		n++;
+	}
+	ptr[n] = '\0';
+	return (ptr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	index;
-	unsigned int	len_sub_str;
-	char			*ptr;
+	size_t	i;
+	char	*ptr;
 
-	index = 0;
+	i = -1;
 	if (!s)
-		return (0);
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		ptr = malloc(1);
-		ptr[0] = 0;
+		if (!ptr)
+			return (NULL);
+		ptr[0] = '\0';
 		return (ptr);
 	}
-	len_sub_str = min_mal(ft_strlen(s) - start, len);
-	ptr = malloc(len_sub_str + 1);
-	if (ptr == NULL)
-		return (0);
-	while (index < len_sub_str && s[index] != '\0')
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	ptr = malloc(1 + len * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	while (s[++i + start] && len > i)
 	{
-		ptr[index] = s[index + start];
-		index++;
+		ptr[i] = s[i + start];
 	}
-	ptr[index] = '\0';
-	return (ptr);
-}
-
-static char	*ft_strcat_p(char *dest, const char *src, int position)
-{
-	int	len;
-	int	i;
-
-	len = 0;
-	i = 0;
-	while (dest[i] != '\0' && position != 0)
-		i++;
-	while (src[len] != '\0')
-	{
-		dest[i] = src[len];
-		i++;
-		len++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strjjoin(char *s1, char *s2)
-{
-	int		index;
-	int		length;
-	char	*ptr;
-
-	if (!s1)
-	{
-		s1 = malloc(1);
-		s1[0] = '\0';
-	}
-	index = 0;
-	length = ft_strlen(s1) + ft_strlen(s2);
-	ptr = malloc(length + 1);
-	if (ptr == NULL)
-		return (0);
-	ft_strcat_p(ptr, s1, 0);
-	ft_strcat_p(ptr, s2, 1);
-	free(s1);
+	ptr[i] = '\0';
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 23:02:00 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:02:03 by acharik          ###   ########.fr       */
+/*   Updated: 2025/05/03 21:48:03 by mel-mans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void		free_function(char **str);
 
 //!-----------------get_next--------
 size_t		ft_strlen(const char *str);
-char		*ft_strdup(char *src);
+// char		*ft_strdup(char *src);
 int			check_fun(char *s);
 // int		check_back_s(char *s);
 char		*d_line(char *line);
@@ -120,4 +120,18 @@ char		*ft_strjjoin(char *s1, char *s2);
 void		check_maze_player(t_data_par *parsing);
 void		around_ps(t_data_par *parsing, int i, int index);
 int			around_zero(t_data_par *parsing, int index, char *line, int i);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strdup(const char *string);
+char		*ft_strjoin2(char *strr, char *buff);
+char		*ft_strchr2(char *str, int c);
+size_t		ft_strlen(const char *str);
+int			check_line2(char *str);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*get_next_line(int fd);
+
 #endif

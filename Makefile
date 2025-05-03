@@ -2,9 +2,9 @@ NAME = cub3d
 
 CC = gcc
 
-ADDITIONAL_FLAGS = -fsanitize=address -g 
+ADDITIONAL_FLAGS = 
 
-C_FLAGS = -g
+C_FLAGS = -Wall -Werror -Wextra -g
 
 MLX_FLAGS =  -Lmlx_linux -lmlx_Linux -lX11 -lXext -lm
 
@@ -47,7 +47,7 @@ RM = rm -rf
 all		:	$(NAME) 
 
 $(NAME) : $(FUNCTIONS)
-			$(CC) $(C_FLAGS) $(FUNCTIONS) $(MLX_FLAGS) -o $(NAME) 
+			$(CC) $(C_FLAGS) $(FUNCTIONS) $(ADDITIONAL_FLAGS) $(MLX_FLAGS) -o $(NAME) 
 
 clean	:	
 			$(RM) $(NAME)

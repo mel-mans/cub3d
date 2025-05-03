@@ -3,107 +3,103 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acharik <acharik@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mel-mans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 23:05:59 by acharik           #+#    #+#             */
-/*   Updated: 2025/04/23 23:06:00 by acharik          ###   ########.fr       */
+/*   Created: 2025/05/03 21:45:34 by mel-mans          #+#    #+#             */
+/*   Updated: 2025/05/03 21:45:38 by mel-mans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includ/map_parsing.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strchr2(char *s, int c)
 {
-	char	*ptr;
-	int		len;
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char) c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (0);
+}
+
+char	*get_line_of_text(char *text)
+{
 	int		i;
 
 	i = 0;
-	len = ft_strlen(src);
-	ptr = malloc((len + 1) * sizeof(char));
-	if (ptr == NULL)
-		return (0);
-	while (src[i] != '\0')
-	{
-		ptr[i] = src[i];
+	if (text[i] == '\0')
+		return (NULL);
+	while (text[i] && text[i] != '\n')
 		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (ft_substr(text, 0, i + 1));
 }
 
-int	check_fun(char *s)
+char	*save_next_line(char *line)
 {
-	int	index;
+	int		i;
+	char	*str;
 
-	if (!s)
-		return (-1);
-	index = 0;
-	while (s[index] != '\0')
+	i = 0;
+	while (line[i] != '\n' && line[i])
+		i++;
+	if (line[i] == '\0')
 	{
-		if (s[index] == '\n')
-			return (index);
-		index++;
+		free (line);
+		return (NULL);
 	}
-	return (-1);
+	str = ft_substr(ft_strchr2(line, '\n') + 1, 0, ft_strlen(line));
+	free(line);
+	return (str);
 }
 
-char	*line_remainder(char *src, int startindex)
+char	*help_get_next_line(int fd, char *buff_line)
 {
-	char	*tmp;
-	char	*line;
+	int			red_byt;
+	char		*buff;
 
-	tmp = src;
-	line = ft_strdup(src + startindex + 1);
-	free(tmp);
-	return (line);
-}
-
-char	*read_join(int fd, char *str, int *k)
-{
-	char	*ptr;
-
-	*k = 1;
-	ptr = malloc(1 + 1);
-	while (check_fun(str) == -1 && *k != 0)
+	red_byt = 1;
+	buff = malloc((1 + BUFFER_SIZE) * sizeof(char));
+	if (!buff)
+		return (NULL);
+	while (check_line2(buff_line) != 1 && red_byt != 0)
 	{
-		*k = read(fd, ptr, 1);
-		if (*k == -1)
+		red_byt = read(fd, buff, BUFFER_SIZE);
+		if (red_byt == -1)
 		{
-			free(ptr);
+			free (buff);
+			free (buff_line);
+			buff_line = NULL;
 			return (NULL);
 		}
-		ptr[*k] = '\0';
-		str = ft_strjjoin(str, ptr);
+		buff[red_byt] = '\0';
+		buff_line = ft_strjoin2(buff_line, buff);
 	}
-	free(ptr);
-	return (str);
+	free (buff);
+	return (buff_line);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
-	int			k;
 	char		*line;
-	int			index_line;
+	static char	*buff_line;
 
-	str = read_join(fd, str, &k);
-	if (str == NULL)
-		return (0);
-	if (ft_strlen(str) == 0 && k == 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	buff_line = help_get_next_line(fd, buff_line);
+	if (!buff_line)
+		return (NULL);
+	line = get_line_of_text(buff_line);
+	buff_line = save_next_line(buff_line);
+	if (buff_line)
 	{
-		free(str);
-		str = NULL;
-		return (0);
+		free (buff_line);
+		buff_line = NULL;
 	}
-	index_line = check_fun(str);
-	if (index_line == -1)
-	{
-		line = str;
-		str = (NULL);
-		return (line);
-	}
-	line = ft_substr(str, 0, index_line + 1);
-	str = line_remainder(str, index_line);
 	return (line);
 }
